@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>appsimpact</title>
+    <link rel="stylesheet" href="{% static 'core/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
+	<link href="{% static 'core/css/font.css' %}" rel="stylesheet">
+	{% block corsess %}
+	  <link rel="stylesheet" href="{% static 'core/css/my.css' %}">
+	{% endblock corsess %}
+</head>
+<body>
+	<div class="container-fluid bg-dark">	
+	   <div class="row">
+	   	<div class="col-sm-3">
+	   		<div class="border-right border-warning h-100">
+	   			<div class="text-center">
+	   				<img src='{% static "core/photos/pic1.jpg" %}' alt="ProfilePic" class="rounded-circle mt-5" width="120px" height="120px">
+	   				<h3 class="text-white mt-3">Raghuveer Dhayal</h3>
+	   			</div>
+	   			    <hr class="border-light">
+	   			<nav class="nav flex-column text-center">
+	   				<a href="{% url 'home' %}" class="nav-link">HOME</a>
+	   				<a href="{% url 'skill' %}"class="nav-link ">SKILL</a>
+	   				<a href="{% url 'contact' %}"class="nav-link">CONTACT</a>
+	   			</nav>    
+	   		</div>
+	   	</div>
+	   	<div class="col-sm-9">
+	   		{% block content %}
+	   		<div class="mt-5">
+				 <div class="text-center">
+				  <img src="{% static 'core/photos/pic1.jpg' %}" alt="ProfilePic" class="img-thumbnail" width="250px" height="150px">
+				 </div>
+				 <div class="mt-5 text-white mx-5 text-justify">
+				  <h1 class="font-weight-bold st-font">Hello,</h1>
+				  <div class="px-4" style="line-height:2rem;">
+				   <p style="text-indent:100px;"> I am <b class="text-warning">Raghuveer Dhayal</b> having 2 month of full-stack web development experience for global businesses, I offer the technical expertise you are seeking for your web developer position.</p>
+				   <p>Since earning my bachelor’s degree in internet and web development from XYZ University, I have served as a web developer at <b class="text-warning">APPSIMPACT</b>, one of biggest premier digital marketing and web development firm. In this position, I have led web development projects for clients in diverse industries including technology, manufacturing, pharmaceutical, hospitality, retail and financial services.</p>
+				   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet sapiente reiciendis numquam optio? Enim eligendi quae ducimus ipsam consectetur dicta veritatis sunt. Pariatur vel modi alias eum ducimus nam temporibus.</p>
+				  </div>
+				 </div>
+				 <div class="text-center">
+				  <a href="{% url 'contact' %}" class="btn btn-outline-warning my-3 mr-5">Hire Me</a>
+				  <a href="{% url 'contact' %}" class="btn btn-outline-info my-3">Contact</a>
+				 </div>
+				</div>
+				{% endblock content %}
+	   	</div>
+	   	
+	   </div>
+    </div> 
+   <script src="{% static 'core/js/jquery.js' %}"></script>
+   <script src="{% static 'core/js/popper.js' %}"></script>
+   <script src="{% static 'core/js/bootstrap.js' %}"></script>
+   <script src="{% static 'core/js/font.js' %}"></script>
+</body>
+</html>
